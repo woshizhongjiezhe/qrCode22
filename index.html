@@ -188,6 +188,98 @@
             background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
             margin: 0.8rem auto 0;
         }
+
+        /* Recruitment Manifesto Section */
+        .recruitment-manifesto {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(10, 25, 47, 0.9) 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .manifesto-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .manifesto-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .manifesto-subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .manifesto-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+        }
+
+        .manifesto-highlight {
+            background: rgba(0, 242, 254, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .manifesto-list {
+            text-align: left;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .manifesto-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .manifesto-list li::before {
+            content: "🚀";
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .manifesto-cta {
+            margin-top: 3rem;
+        }
+
+        .manifesto-cta .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .manifesto-cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.4);
+        }
         
         /* Vision section */
         .vision-section {
@@ -326,11 +418,28 @@
             padding: 1.5rem;
             text-align: center;
             border: 1px solid rgba(0, 242, 254, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
         }
         
         .benefit-item h3 {
             color: var(--secondary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .benefit-highlight {
+            color: var(--accent-color);
+            font-weight: 700;
         }
         
         /* Contact section */
@@ -396,6 +505,14 @@
             .section-title {
                 font-size: 1.8rem;
             }
+
+            .manifesto-title {
+                font-size: 2rem;
+            }
+
+            .manifesto-subtitle {
+                font-size: 1.1rem;
+            }
             
             .arch-grid,
             .benefits-grid,
@@ -445,9 +562,59 @@
             <div class="vision">
                 <p><strong>零界演化科技专注自演化人工智能系统与智能量化交易平台，致力于构建 "智能体 × 策略 × 资本" 融合生态，打造自我进化的金融科技超级系统。</strong></p>
             </div>
-            <a href="#jobs" class="header-cta">人才招募</a>
+            <a href="#manifesto" class="header-cta">加入我们</a>
         </div>
     </header>
+
+    <!-- Recruitment Manifesto Section -->
+    <section id="manifesto" class="recruitment-manifesto">
+        <div class="container">
+            <div class="manifesto-content">
+                <h2 class="manifesto-title">👁 我们不招员工，只寻找合伙人</h2>
+                <p class="manifesto-subtitle">在零界演化，我们不是在招聘一个"岗位"</p>
+                <div class="manifesto-text">
+                    <p>我们在寻找能与 AI 并肩战斗的创造者、冒险者与构建者。</p>
+                    <p>这里没有天花板，只有边界的突破；</p>
+                    <p>这里不是"打工"，而是与你命运绑定的深度共创。</p>
+                </div>
+
+                <div class="manifesto-highlight">
+                    <h3>🚀 你将加入什么？</h3>
+                    <ul class="manifesto-list">
+                        <li>一个由人工智能驱动、自我进化的系统组织</li>
+                        <li>一个用科技洞察时代、以战略改写命运的创变团队</li>
+                        <li>一个正在构建金融、能源、生物智能等多个智能体帝国的未来平台</li>
+                    </ul>
+                </div>
+
+                <div class="manifesto-highlight">
+                    <h3>💎 你将获得什么？</h3>
+                    <ul class="manifesto-list">
+                        <li>首年薪资可达 20~50 万元，优异者不设上限</li>
+                        <li>全员股权激励，合伙人机制透明落地，已沉淀十余年</li>
+                        <li>与你匹配的 AI 智能体共同协作，实现效率飞跃与认知跃迁</li>
+                        <li>每年20%-30%优胜劣汰，真正赛马不相马，胜者为王</li>
+                    </ul>
+                </div>
+
+                <div class="manifesto-text">
+                    <h3>💡 我们相信：</h3>
+                    <p>每个时代都属于那些提前觉醒的人。</p>
+                    <p>真正的"老板"，不是职位定义的，而是行动证明的。</p>
+                    <p>财富只是副产品，认知与影响力才是你真正的资本。</p>
+                </div>
+
+                <div class="manifesto-highlight">
+                    <p><strong>世界正在重启秩序，AI 正在重构一切，<br>你，准备好成为下一个构建者了吗？</strong></p>
+                </div>
+
+                <div class="manifesto-cta">
+                    <a href="#jobs" class="btn">立即申请加入</a>
+                    <a href="#jobs" class="btn">查看空缺岗位</a>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Company Introduction section -->
     <section id="company" class="vision-section">
@@ -545,6 +712,54 @@
             </div>
         </div>
     </section>
+
+    <!-- Benefits section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">福利待遇</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>薪资待遇</h3>
+                    <p>极具竞争力的年薪，硕士岗位<br><span class="benefit-highlight">首年薪资高达20-50万</span></p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>住宿保障</h3>
+                    <p>提供住宿（上班步行10分钟，<br>男女独立空间）</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>保险福利</h3>
+                    <p><span class="benefit-highlight">六险一金</span>（含一份商业险）</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>工作时间</h3>
+                    <p>周一至周五8：30-17：30（周末双休）</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>生活补贴</h3>
+                    <p>提供交通、餐饮、电话补贴</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>活动福利</h3>
+                    <p>丰富多彩的活动及各种节日福利</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>健康关怀</h3>
+                    <p>员工定期体检+国内外旅游</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <h3>发展机会</h3>
+                    <p>提供海外深造机会</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Contact section -->
     <section id="contact" class="contact">
@@ -568,11 +783,10 @@
                         <h3>在线联系</h3>
                         <p class="contact-highlight">官网：www.singularityx.tech</p>
                         <a href="mailto:join@singularityx.tech?subject=%E9%9B%B6%E7%95%8C%E6%BC%94%E5%8C%96-%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92" style="color:red; font-weight:bold;">
-  点击发送简历（收件人：join@singularityx.tech，主题为“零界演化-简历投递”）
+  点击发送简历（收件人：join@singularityx.tech，主题为"零界演化-简历投递"）
 </a>
 
-
-                        <br><br>
+   <br><br>
 <img src="二维码.jpg" alt="微信二维码" style="width: 200px;">
 
 
