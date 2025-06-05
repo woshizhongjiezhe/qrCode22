@@ -319,7 +319,305 @@
             text-align: center;
             font-size: 1.2rem;
         }
-        
+              :root {
+            --primary-color: #0a192f;
+            --secondary-color: #00f2fe;
+            --accent-color: #4764ff;
+            --text-color: #e6f1ff;
+            --dark-accent: #112240;
+            --light-accent: #8892b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* AI Partnership Declaration Section */
+        .ai-partnership-section {
+            background: linear-gradient(135deg, 
+                rgba(10, 25, 47, 0.95) 0%, 
+                rgba(17, 34, 64, 0.9) 30%,
+                rgba(10, 25, 47, 0.95) 70%,
+                rgba(0, 242, 254, 0.1) 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-partnership-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(71, 100, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 242, 254, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            animation: backgroundPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .ai-partnership-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .ai-partnership-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), #ff6b6b);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(0, 242, 254, 0.5);
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                filter: brightness(1) drop-shadow(0 0 10px rgba(0, 242, 254, 0.3));
+            }
+            50% { 
+                filter: brightness(1.2) drop-shadow(0 0 20px rgba(0, 242, 254, 0.6));
+            }
+        }
+
+        .partnership-statements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .statement-card {
+            background: rgba(17, 34, 64, 0.7);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            border: 2px solid rgba(0, 242, 254, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .statement-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .statement-card:hover::before {
+            left: 100%;
+        }
+
+        .statement-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--secondary-color);
+            box-shadow: 
+                0 20px 40px rgba(0, 242, 254, 0.3),
+                0 0 20px rgba(0, 242, 254, 0.2);
+        }
+
+        .statement-text {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        .statement-highlight {
+            color: var(--secondary-color);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+        }
+
+        .statement-emphasis {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Central Declaration */
+        .central-declaration {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(71, 100, 255, 0.1) 100%);
+            border-radius: 20px;
+            border: 3px solid rgba(0, 242, 254, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .central-declaration::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .central-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(90deg, var(--text-color), var(--secondary-color), var(--text-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShimmer 4s ease-in-out infinite;
+        }
+
+        @keyframes textShimmer {
+            0%, 100% { background-position: -200% center; }
+            50% { background-position: 200% center; }
+        }
+
+        /* Call to Action */
+        .partnership-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .partnership-cta-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 12px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.4);
+        }
+
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 20px 40px rgba(0, 242, 254, 0.6),
+                0 0 30px rgba(0, 242, 254, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .ai-partnership-section {
+                padding: 4rem 0;
+            }
+
+            .ai-partnership-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .partnership-statements {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .statement-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .statement-text {
+                font-size: 1rem;
+            }
+
+            .central-declaration {
+                margin: 2rem 0;
+                padding: 2rem 1rem;
+            }
+
+            .central-text {
+                font-size: 1.1rem;
+            }
+
+            .partnership-cta-text {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ai-partnership-title {
+                font-size: 1.5rem;
+            }
+
+            .statement-text {
+                font-size: 0.95rem;
+            }
+
+            .central-text {
+                font-size: 1rem;
+            }
+        }
         /* Architecture section */
         .architecture {
             background-color: var(--primary-color);
@@ -740,58 +1038,67 @@
             <div class="vision">
                 <p><strong>零界演化科技专注自演化人工智能系统与智能量化交易平台，致力于构建 "智能体 × 策略 × 资本" 融合生态，打造自我进化的金融科技超级系统。</strong></p>
             </div>
-            <a href="#manifesto" class="header-cta">加入我们</a>
+            <a href="#manifesto" class="header-cta">加入我们，你不是被雇佣，而是成为共创者</a>
         </div>
     </header>
+
 
     <!-- Recruitment Manifesto Section -->
     <section id="manifesto" class="recruitment-manifesto">
         <div class="container">
             <div class="manifesto-content">
-                <h2 class="manifesto-title">👁 我们不招员工，只寻找合伙人</h2>
-                <p class="manifesto-subtitle">在零界演化，我们不是在招聘一个"岗位"</p>
-                <div class="manifesto-text">
-                    <p>我们寻找与 AI 并肩战斗的创造者、冒险者与构建者</p>
-                    <p>这里没有天花板，只有边界的突破</p>
-                    <p>这里不是"打工"，而是与你命运绑定的深度共创</p>
-                </div>
+                <h2 class="manifesto-title">👁 我们不招员工，我们在寻找能与 AI 并肩作战的合伙人</h2>
+                
 
-                <div class="manifesto-highlight">
-                    <h3>🚀 你将加入什么？</h3>
-                    <ul class="manifesto-list">
-                        <li>一个由人工智能驱动、自我进化的系统组织</li>
-                        <li>一个用科技洞察时代、以战略改写命运的创变团队</li>
-                        <li>一个正在构建金融、能源、生物智能等多个智能体帝国的未来平台</li>
-                    </ul>
+    <section class="ai-partnership-section">
+        <div class="ai-partnership-content">
+            <h2 class="ai-partnership-title">🤖 与 AI 共创商业规则的战场</h2>
+            
+            <div class="partnership-statements">
+                <div class="statement-card">
+                    <div class="statement-text">
+                        这是一个<span class="statement-highlight">与 AI 共创商业规则的系统</span>，<br>
+                        <span class="statement-emphasis">不是混口饭吃的地方</span>，<br>
+                        是<span class="statement-highlight">技术信仰者的战场</span>。
+                    </div>
                 </div>
-
-                <div class="manifesto-highlight">
-                    <h3>💎 你将获得什么？</h3>
-                    <ul class="manifesto-list">
-                        <li>首年薪资可达 20~50 万元，优异者不设上限</li>
-                        <li>全员股权激励，合伙人机制透明落地，已沉淀十余年</li>
-                        <li>与你匹配的 AI 智能体共同协作，实现效率飞跃与认知跃迁</li>
-                        
-                    </ul>
+                
+                <div class="statement-card">
+                    <div class="statement-text">
+                        <span class="statement-highlight">优势年薪 + 股权激励 + 演化主导权</span>，<br>
+                        <span class="statement-emphasis">你的代码，决定智能体如何博弈进化</span>。
+                    </div>
                 </div>
-
-                <div class="manifesto-text">
-                    <h3>💡 我们相信：</h3>
-                    <p>每个时代都属于那些提前觉醒的人</p>
-                    <p>真正的"老板"，不是职位定义的，而是行动证明的</p>
-                    <p>财富只是副产品，认知与影响力才是你真正的资本</p>
+                
+                <div class="statement-card">
+                    <div class="statement-text">
+                        我们<span class="statement-highlight">不做打工人</span>，<br>
+                        只做<span class="statement-emphasis">AI 时代的合伙人</span>。<br>
+                        <span class="statement-highlight">这里没有上司，只有同盟</span>。
+                    </div>
                 </div>
-
-                <div class="manifesto-highlight">
-                    <p><strong>世界正在重启秩序，AI 正在重构一切，<br>你，准备好成为下一个构建者了吗？</strong></p>
-                </div>
-
-                <div class="manifesto-cta">
-                    <a href="#jobs" class="btn">立即申请加入</a>
-                    <a href="#jobs" class="btn">查看空缺岗位</a>
+                
+                <div class="statement-card">
+                    <div class="statement-text">
+                        <span class="statement-emphasis">打破界限，创造价值，共享未来</span>。<br>
+                        加入我们，你不是被雇佣，<br>
+                        而是<span class="statement-highlight">成为共创者</span>。
+                    </div>
                 </div>
             </div>
+            
+
+            
+            <div class="partnership-cta">
+                <div class="partnership-cta-text">🚀 准备好成为 AI 时代的先锋了吗？</div>
+                <a href="#jobs" class="cta-button">立即成为合伙人</a>
+            </div>
         </div>
+
+    </section>
+
+
+ 
     </section>
     
     <!-- Company Introduction section -->
@@ -857,7 +1164,7 @@
             <div class="arch-card" style="text-align: center; padding: 3rem 2rem;">
                 <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--secondary-color);">🎯 科学精准的价值评估体系</h3>
                 <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
-                    我们采用<span style="color: var(--secondary-color); font-weight: 700;">截断蒙特卡洛（TMC）</span>、<span style="color: var(--accent-color); font-weight: 700;">影响函数（Influence Function）</span>、<span style="color: var(--secondary-color); font-weight: 700;">最小核心（Least Core）</span>等方法，多维度评估团队价值贡献，精准挖掘个人价值，确保贡献评估准确无误。
+                    我们采用<span style="color: var(--secondary-color); font-weight: 700;">截断蒙特卡洛（TMC）加速决策</span>、<span style="color: var(--accent-color); font-weight: 700;">用Shapley Value衡量每一份贡献</span><span style="color: var(--secondary-color); font-weight: 700;"></span>确保你在团队中，不被低估，也不会被稀释。
                 </p>
                            </div>
         </div>
@@ -996,7 +1303,13 @@
 <section class="qr-code-section">
     <div class="qr-code-content">
         <h2 class="qr-section-title">微信联系</h2>
-        <p class="qr-section-subtitle">扫描下方二维码，添加我们的微信进行详细咨询</p>
+       
+                    <div class="central-declaration">
+                <div class="central-text">
+                    扫码加入零界演化，<br>
+                    不是入职，是共创未来
+                </div>
+            </div>
         
         <div class="qr-codes-container">
             <div class="qr-code-item">
