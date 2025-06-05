@@ -478,18 +478,148 @@
             font-size: 1.1rem;
             margin: 0.5rem 0;
         }
-        
-        /* QR Code styling */
-        .qr-code-container {
+
+
+        /* 新增：二维码独立区域样式 */
+        .qr-code-section {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.9) 0%, rgba(10, 25, 47, 0.95) 100%);
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-code-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(71, 100, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .qr-code-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             text-align: center;
-            margin-top: 20px;
+        }
+
+        .qr-section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .qr-section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            margin: 0.8rem auto 2rem;
+        }
+
+        .qr-section-subtitle {
+            font-size: 1.1rem;
+            color: var(--light-accent);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        /* 二维码容器样式 */
+        .qr-codes-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .qr-code-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(17, 34, 64, 0.6);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid rgba(0, 242, 254, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .qr-code-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.3);
+        }
+
+        .qr-code-item img {
+            width: 140px;
+            height: 140px;
+            border-radius: 8px;
+            background: white;
+            padding: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .qr-code-label {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .qr-code-section {
+                padding: 3rem 0;
+            }
+            
+            .qr-section-title {
+                font-size: 1.6rem;
+            }
+            
+            .qr-codes-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .qr-code-item {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .qr-code-item img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .qr-code-item img {
+                width: 100px;
+                height: 100px;
+            }
         }
         
-        .qr-code-container img {
-            display: block;
-            margin: 0 auto;
-            width: 200px;
-            height: auto;
+        
+        
+
+
+        /* 确保容器有足够宽度 */
+        .contact-method:last-child {
+            width: 100%;
+            text-align: center;
         }
         
         /* Footer */
@@ -572,19 +702,7 @@
                 margin-bottom: 0.5rem;
             }
             
-            /* 二维码在移动端居中 */
-            .qr-code-container {
-                text-align: center;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                margin-top: 20px;
-            }
-            
-            .qr-code-container img {
-                width: 180px;
-                height: auto;
-            }
+
         }
         
         /* Particles effect */
@@ -866,9 +984,7 @@
   点击发送简历（收件人：join@singularityx.tech，主题为"零界演化-简历投递"）
 </a>
 
-   <br><br>
-<img src="二维码.jpg" alt="微信二维码" style="width: 200px;">
-
+                   
 
 
                     </div>
@@ -876,6 +992,61 @@
             </div>
         </div>
     </section>
+
+<!-- 修改后的联系我们部分（移除二维码） -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">联系我们</h2>
+        <div class="contact-info">
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <h3>工作地点</h3>
+                    <p class="contact-highlight">杭州市西湖区蒋村街道双龙街 136 号西溪世纪中心 2 号楼 1129 室</p>
+                    <p class="contact-highlight">青岛市市南区香港中路26号远雄国际广场908-915室</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>联系方式</h3>
+                    <p>联系人：韩女士</p>
+                    <p class="contact-highlight">电话：15275423180</p>
+                </div>
+                
+                <div class="contact-method">
+                    <h3>在线联系</h3>
+                    <p class="contact-highlight">官网：www.singularityx.tech</p>
+                    <a href="mailto:join@singularityx.tech?subject=%E9%9B%B6%E7%95%8C%E6%BC%94%E5%8C%96-%E7%AE%80%E5%8E%86%E6%8A%95%E9%80%92" style="color:red; font-weight:bold;">
+                        点击发送简历（收件人：join@singularityx.tech，主题为"零界演化-简历投递"）
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 新增：独立的二维码区域 -->
+<section class="qr-code-section">
+    <div class="qr-code-content">
+        <h2 class="qr-section-title">微信联系</h2>
+        <p class="qr-section-subtitle">扫描下方二维码，添加我们的微信进行详细咨询</p>
+        
+        <div class="qr-codes-container">
+            <div class="qr-code-item">
+                <img src="二维码1.png" alt="总监微信二维码">
+                <div class="qr-code-label">总经理</div>
+            </div>
+            
+            <div class="qr-code-item">
+                <img src="二维码2.png" alt="微信二维码">
+                <div class="qr-code-label">HR 王女士</div>
+            </div>
+            
+            <div class="qr-code-item">
+                <img src="二维码3.png" alt="HR 韩女士微信二维码">
+                <div class="qr-code-label">HR 韩女士</div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
