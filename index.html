@@ -1019,26 +1019,399 @@
                          0 0 20px rgba(0, 242, 254, 0.5),
                          0 0 30px rgba(0, 242, 254, 0.3);
         }
+        :root {
+            --primary-color: #0a192f;
+            --secondary-color: #00f2fe;
+            --accent-color: #4764ff;
+            --text-color: #e6f1ff;
+            --dark-accent: #112240;
+            --light-accent: #8892b0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative; 
+        }
+
+        .container {
+            width: 100%;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header styles */
+        header {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(10,25,47,0.95) 0%, rgba(10,25,47,0.8) 100%);
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2; 
+            text-align: center;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .company-name {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .company-name-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--light-accent);
+        }
+        
+        .header-mission {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .belief-statement {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            padding: 2rem;
+            border-radius: 12px;
+            background: rgba(17, 34, 64, 0.6);
+            border-left: 4px solid var(--accent-color);
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .header-cta {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .header-cta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.4);
+        }
+        
+        /* Animated background */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1; 
+        }
+        
+        .animated-bg::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, transparent 20%, var(--primary-color) 70%), 
+                        linear-gradient(to bottom, transparent, var(--primary-color) 70%);
+            opacity: 0.4;
+            animation: rotate 25s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--secondary-color);
+        }
+        
+        .section-title::before {
+            content: "🔹";
+            margin-right: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            margin: 0.8rem 0 0 2rem;
+        }
+
+        /* Company Introduction section */
+        .company-intro {
+            background: linear-gradient(135deg, rgba(17, 34, 64, 0.8) 0%, rgba(10, 25, 47, 0.9) 100%);
+        }
+        
+        .intro-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        
+        .intro-highlight {
+            background: rgba(0, 242, 254, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Jobs section */
+        .jobs {
+            background-color: var(--primary-color);
+        }
+        
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .job-card {
+            background: var(--dark-accent);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.3);
+        }
+        
+        .job-title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .job-desc {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        /* Talent Model section */
+        .talent-model {
+            background-color: var(--dark-accent);
+        }
+        
+        .model-link {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .model-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(71, 100, 255, 0.4);
+        }
+
+        /* Compensation section */
+        .compensation {
+            background-color: var(--primary-color);
+        }
+        
+        .comp-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comp-item {
+            background: rgba(17, 34, 64, 0.6);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .comp-title {
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact section */
+        .contact {
+            background-color: var(--dark-accent);
+            text-align: center;
+        }
+        
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(17, 34, 64, 0.6);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .contact-method {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-method h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-highlight {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        
+        .email-link {
+            color: #ff6b6b;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        
+        .email-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--light-accent);
+            border-top: 1px solid var(--dark-accent);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+            
+            .jobs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                padding: 1rem;
+            }
+            
+            .belief-statement {
+                font-size: 1rem;
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Particles effect */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* Glowing effect */
+        .glow {
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.7),
+                         0 0 20px rgba(0, 242, 254, 0.5),
+                         0 0 30px rgba(0, 242, 254, 0.3);
+        }
+
     </style>
 </head>
 <body>
     <!-- Header with animated background -->
+   <!-- Header -->
     <header>
         <div class="animated-bg"></div>
         <div id="particles-js"></div>
         <div class="header-content">
-            <!-- Animation Iframe Container -->
-            <div id="animation-container" style="order: 1;">
-                <!--iframe id="animation-iframe" src="abc(2).html"></iframe-->
+            <h1 class="company-name glow">🏢 SingularityX Evolution</h1>
+            <p class="company-name-subtitle">组织协作与人才招募</p>
+            <p class="header-mission">构建 "智能体 × 策略 × 资本" 融合生态，打造自我进化的金融科技超级系统</p>
+            
+            <div class="belief-statement">
+                <p><strong>"技术信仰者的战场，不是考察学历，而是协同智能体的能力。"</strong></p>
             </div>
-
-            <h1 class="company-name glow">零界演化</h1>
-            <h2 class="company-name-en">SingularityX Evolution Ltd.</h2>
-            <p class="subtitle">Achieving Exponential Returns via Self-Service Iterative Evolution of Agents</p>
-            <div class="vision">
-                <p><strong>零界演化科技专注自演化人工智能系统与智能量化交易平台，致力于构建 "智能体 × 策略 × 资本" 融合生态，打造自我进化的金融科技超级系统。</strong></p>
-            </div>
-            <a href="#manifesto" class="header-cta">加入我们，你不是被雇佣，而是成为共创者</a>
+            
+            <a href="#jobs" class="header-cta">查看招聘岗位</a>
         </div>
     </header>
 
@@ -1102,20 +1475,25 @@
     </section>
     
     <!-- Company Introduction section -->
-    <section id="company" class="vision-section">
+    <section class="company-intro">
         <div class="container">
             <h2 class="section-title">公司简介</h2>
-            <div class="vision-content">
-                <p><strong>杭州零界演化科技有限公司（SingularityX Evolution Ltd.）</strong></p>
-                <p>零界演化科技专注自演化人工智能系统与智能量化交易平台，致力于构建 "智能体 × 策略 × 资本" 融合生态，打造自我进化的金融科技超级系统。</p>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p><strong>SingularityX Evolution</strong> 专注于自演化人工智能系统与智能量化交易平台，致力于构建前沿的AI驱动金融科技生态系统。</p>
+                </div>
                 
-                <ul class="feature-list">
-                    <li><strong>团队实力：</strong>汇聚浙大、清华等高校人才，成员来自阿里、华为等前沿团队，具备 10 年以上金融衍生品及大宗商品交易经验，曾参与 08 奥运会项目开发。</li>
-                    <li><strong>科研合作：</strong>与知名大学共建联合实验室，深耕 "智能体博弈演化系统""高频量化引擎" 等前沿领域。</li>
-                </ul>
+                <div class="intro-highlight">
+                    <p><strong>团队背景：</strong>汇聚浙大、清华等知名高校人才，核心成员来自阿里、华为等顶尖科技公司，具备10年以上金融衍生品及大宗商品交易经验。</p>
+                </div>
+                
+                <div class="intro-text">
+                    <p><strong>技术方向：</strong>深耕多智能体协作、强化学习、高频量化交易等前沿领域，与知名大学共建联合实验室，推动AI在金融领域的创新应用。</p>
+                </div>
             </div>
         </div>
     </section>
+
     
     <!-- Core Projects section -->
     <section id="projects" class="architecture">
@@ -1157,61 +1535,82 @@
     
     <!-- Team Value Allocation section -->
 <!-- Team Value Allocation section -->
-<section id="value-allocation" class="architecture">
-    <div class="container">
-        <h2 class="section-title">团队价值分配机制</h2>
-        <div class="vision-content" style="max-width: 900px; margin: 0 auto;">
-            <div class="arch-card" style="text-align: center; padding: 3rem 2rem;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: var(--secondary-color);">🎯 科学精准的价值评估体系</h3>
-                <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
-                    我们采用<span style="color: var(--secondary-color); font-weight: 700;">截断蒙特卡洛（TMC）加速决策</span>、<span style="color: var(--accent-color); font-weight: 700;">用Shapley Value衡量每一份贡献</span><span style="color: var(--secondary-color); font-weight: 700;"></span>确保你在团队中，不被低估，也不会被稀释。
-                </p>
-                           </div>
+<!-- Compensation section -->
+    <section class="compensation">
+        <div class="container">
+            <h2 class="section-title">🌌 零界演化的智能协作哲学：定义公平 × 优化决策 × 尊重每一份贡献</h2>
+            <div class="comp-content">
+                <div class="intro-text" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                    <p>在零界演化（SingularityX Evolution），我们将前沿博弈论与AI机制设计应用于组织内部协作方式，</p>
+                    <p>不仅构建自演化交易系统，更打造不会低估你的系统生态：</p>
+                </div>
+                
+                <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(0, 242, 254, 0.1); border-left: 4px solid var(--secondary-color); border-radius: 8px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem; font-size: 1.3rem;">我们如何定义公平 × 优化协作</h3>
+                </div>
+                
+                <div class="comp-item">
+                    <div class="comp-title">✅ 截断蒙特卡洛估计（Truncated Monte Carlo, TMC）</div>
+                    <p>我们用 TMC 定义高效决策边界，让资源与注意力聚焦于最有价值的策略路径与成员行为。</p>
+                </div>
+                
+                <div class="comp-item">
+                    <div class="comp-title">✅ 影响函数（Influence Function）</div>
+                    <p>每一份努力都会产生"价值流动"，我们用影响函数精细追踪你的工作对整个系统表现的边际作用。</p>
+                </div>
+                
+                <div class="comp-item">
+                    <div class="comp-title">✅ 最小核心（Least Core）分配机制 + Shapley Value（夏普利值）</div>
+                    <p>从博弈论中汲取灵感，我们用 Least Core 方法确保每份贡献获得应得的价值分配 —— 不多、不少、恰如其分，同时结合 Shapley Value，量化团队协作中真实的边际影响力。</p>
+                </div>
+                
+                <div style="margin: 2rem 0; padding: 2rem; background: rgba(71, 100, 255, 0.1); border-radius: 12px; text-align: center; border: 2px solid var(--accent-color);">
+                    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary-color);">这不是一份普通的工作，而是技术信仰者的战场。</p>
+                    <p style="font-size: 1.1rem; line-height: 1.7;">如果你热爱数学、AI、协作博弈与智能体自演化，</p>
+                    <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 600;">那么你将不仅参与构建系统，更参与构建一个重新定义"公平、效率与进化"的组织结构。</p>
+                </div>
+            </div>
         </div>
-    </div>
-</section>    
+    </section>
     <!-- Core Projects section -->
     <section id="projects" class="applications">
     <!-- Jobs section -->
+  <!-- Jobs section -->
     <section id="jobs" class="jobs">
         <div class="container">
-            <h2 class="section-title">人才招募</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: var(--secondary-color); font-size: 1.2rem;"><strong>正在招募：</strong></p>
-            
-            <div class="job-card">
-                <h3 class="job-title">AI 算法研究员</h3>
-                <ul class="job-reqs">
-                    <li>专业方向：强化学习 / 多智能体 / 演化算法</li>
-                    <li>负责智能体系统的算法设计与优化</li>
-                    <li>参与前沿AI技术在量化交易中的应用研究</li>
-                </ul>
-            </div>
-            
-            <div class="job-card">
-                <h3 class="job-title">量化交易工程师</h3>
-                <ul class="job-reqs">
-                    <li>专业方向：高频引擎 / 策略执行系统</li>
-                    <li>负责交易系统的架构设计与性能优化</li>
-                    <li>具备金融市场交易经验者优先</li>
-                </ul>
-            </div>
-            
-            <div class="job-card">
-                <h3 class="job-title">全栈开发工程师</h3>
-                <ul class="job-reqs">
-                    <li>专业方向：可视化控制台 / API 接口 / SaaS 平台</li>
-                    <li>负责前后端系统开发与维护</li>
-                    <li>熟悉现代Web技术栈</li>
-                </ul>
-            </div>
-            
-            <div class="job-card">
-                <h3 class="job-title">联合研究实习生</h3>
-                <ul class="job-reqs">
-                    <li>参与知名大学实验室科研共建项目</li>
-                    <li>协助前沿技术研究与实验</li>
-                    <li>优秀在校学生优先考虑</li>
-                </ul>
+            <h2 class="section-title">招聘岗位</h2>
+            <div class="jobs-grid">
+                <div class="job-card">
+                    <h3 class="job-title">AI 研究员</h3>
+                    <div class="job-desc">
+                        <p><strong>专业方向：</strong>策略 / 自博弈 / 强化学习</p>
+                        <p>负责智能体演化算法设计，多智能体博弈系统开发，前沿AI技术在量化交易中的应用研究。</p>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <h3 class="job-title">量化工程师</h3>
+                    <div class="job-desc">
+                        <p><strong>专业方向：</strong>高频系统 / 交易策略</p>
+                        <p>负责高频交易引擎架构设计，策略执行系统优化，风控系统建设与维护。</p>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <h3 class="job-title">全栈开发者</h3>
+                    <div class="job-desc">
+                        <p><strong>专业方向：</strong>SaaS 后台 / UI 控制台</p>
+                        <p>负责交易平台前后端开发，可视化控制台设计，API接口开发与维护。</p>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <h3 class="job-title">实习研究员</h3>
+                    <div class="job-desc">
+                        <p><strong>专业方向：</strong>高校联合实验室</p>
+                        <p>参与前沿技术研究项目，协助算法验证与实验，优秀在校学生优先考虑。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
