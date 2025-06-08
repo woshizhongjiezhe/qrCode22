@@ -5,6 +5,412 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>零界演化 | SingularityX Evolution</title>
     <style>
+   :root {
+            --primary-color: #0066ff;
+            --secondary-color: #00f2fe;
+            --accent-color: #4764ff;
+            --text-light: #e0e6ff;
+            --bg-dark: #0a0a0f;
+            --bg-gradient: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            --neon-glow: 0 0 20px rgba(0, 242, 254, 0.3);
+            --border-glow: 0 0 30px rgba(71, 100, 255, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .compensation {
+            position: relative;
+            padding: 4rem 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(71, 100, 255, 0.1) 0%, transparent 50%),
+                var(--bg-gradient);
+        }
+
+        .compensation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(0, 242, 254, 0.03) 50%, transparent 100%),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 242, 254, 0.03) 2px,
+                    rgba(0, 242, 254, 0.03) 4px
+                );
+            pointer-events: none;
+            animation: scanning 8s linear infinite;
+        }
+
+        @keyframes scanning {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color), #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: var(--neon-glow);
+            line-height: 1.2;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            border-radius: 2px;
+            box-shadow: var(--neon-glow);
+        }
+
+        .comp-content {
+            position: relative;
+        }
+
+        .intro-text {
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        .intro-text p {
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 团队图片区域 */
+        .team-image-container {
+            margin: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .team-image-wrapper {
+            display: inline-block;
+            position: relative;
+            padding: 20px;
+            background: 
+                linear-gradient(45deg, rgba(0, 242, 254, 0.1), rgba(71, 100, 255, 0.1)),
+                rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            box-shadow: 
+                var(--border-glow),
+                inset 0 0 20px rgba(0, 242, 254, 0.1);
+            animation: borderPulse 3s ease-in-out infinite alternate;
+        }
+
+        .team-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color), #ff6b9d, var(--secondary-color));
+            border-radius: 22px;
+            z-index: -1;
+            animation: rotate 4s linear infinite;
+        }
+
+        @keyframes borderPulse {
+            0% { 
+                box-shadow: 
+                    0 0 20px rgba(0, 242, 254, 0.3),
+                    inset 0 0 20px rgba(0, 242, 254, 0.1);
+            }
+            100% { 
+                box-shadow: 
+                    0 0 40px rgba(71, 100, 255, 0.5),
+                    inset 0 0 30px rgba(71, 100, 255, 0.2);
+            }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .team-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .team-image:hover {
+            transform: scale(1.02);
+        }
+
+        .philosophy-header {
+            margin: 3rem 0 2rem;
+            padding: 2rem;
+            background: 
+                linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(71, 100, 255, 0.1)),
+                rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--secondary-color);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .philosophy-header h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .comp-item {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 46, 0.6)),
+                rgba(22, 33, 62, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(71, 100, 255, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comp-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            animation: spin 6s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .comp-item:hover::before {
+            opacity: 1;
+        }
+
+        .comp-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(71, 100, 255, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .comp-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .comp-item p {
+            line-height: 1.7;
+            color: var(--text-light);
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-message {
+            margin: 3rem 0;
+            padding: 3rem;
+            background: 
+                linear-gradient(135deg, rgba(71, 100, 255, 0.15), rgba(0, 242, 254, 0.1)),
+                rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid var(--accent-color);
+            box-shadow: 
+                var(--border-glow),
+                inset 0 0 30px rgba(71, 100, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(0, 242, 254, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .final-message p {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1rem;
+        }
+
+        .final-message p:first-child {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+        }
+
+        .final-message p:not(:first-child) {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .final-message p:last-child {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1.1rem;
+            }
+
+            .comp-item,
+            .philosophy-header,
+            .final-message {
+                padding: 1.5rem;
+            }
+
+            .team-image-wrapper {
+                padding: 15px;
+            }
+        }
+
+        /* 粒子效果 */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 2s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 3s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
         :root {
             --primary-color: #0a192f;
             --secondary-color: #00f2fe;
@@ -1521,32 +1927,37 @@
     </section>
     
     <!-- Philosophy section -->
-    <section id="philosophy" class="applications">
-        <div class="container">
-            <h2 class="section-title">企业理念</h2>
-            <div class="vision-content">
-                <div class="vision-highlight">
-                    <p>在 AI 加速演化时代，我们秉持 "加速回报定律"，重视自驱力、开放协作与自我迭代能力，坚信与智能体共生演化，方能实现突破。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    </section>
-    
-    <!-- Team Value Allocation section -->
-<!-- Team Value Allocation section -->
-<!-- Compensation section -->
     <section class="compensation">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
         <div class="container">
             <h2 class="section-title">🌌 零界演化的智能协作哲学：定义公平 × 优化决策 × 尊重每一份贡献</h2>
+            
             <div class="comp-content">
-                <div class="intro-text" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.8;">
+                <div class="intro-text">
                     <p>在零界演化（SingularityX Evolution），我们将前沿博弈论与AI机制设计应用于组织内部协作方式，</p>
                     <p>不仅构建自演化交易系统，更打造不会低估你的系统生态：</p>
                 </div>
+
+                <!-- 团队图片区域 -->
+                <div class="team-image-container">
+                    <div class="team-image-wrapper">
+                        <img src="team.jpg" alt="零界演化团队" class="team-image">
+                    </div>
+                </div>
                 
-                <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(0, 242, 254, 0.1); border-left: 4px solid var(--secondary-color); border-radius: 8px;">
-                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem; font-size: 1.3rem;">我们如何定义公平 × 优化协作</h3>
+                <div class="philosophy-header">
+                    <h3>我们如何定义公平 × 优化协作</h3>
                 </div>
                 
                 <div class="comp-item">
@@ -1564,14 +1975,15 @@
                     <p>从博弈论中汲取灵感，我们用 Least Core 方法确保每份贡献获得应得的价值分配 —— 不多、不少、恰如其分，同时结合 Shapley Value，量化团队协作中真实的边际影响力。</p>
                 </div>
                 
-                <div style="margin: 2rem 0; padding: 2rem; background: rgba(71, 100, 255, 0.1); border-radius: 12px; text-align: center; border: 2px solid var(--accent-color);">
-                    <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; color: var(--secondary-color);">这不是一份普通的工作，而是技术信仰者的战场。</p>
-                    <p style="font-size: 1.1rem; line-height: 1.7;">如果你热爱数学、AI、协作博弈与智能体自演化，</p>
-                    <p style="font-size: 1.1rem; line-height: 1.7; font-weight: 600;">那么你将不仅参与构建系统，更参与构建一个重新定义"公平、效率与进化"的组织结构。</p>
+                <div class="final-message">
+                    <p>这不是一份普通的工作，而是技术信仰者的战场。</p>
+                    <p>如果你热爱数学、AI、协作博弈与智能体自演化，</p>
+                    <p>那么你将不仅参与构建系统，更参与构建一个重新定义"公平、效率与进化"的组织结构。</p>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Core Projects section -->
     <section id="projects" class="applications">
     <!-- Jobs section -->
