@@ -16,6 +16,416 @@
             --border-glow: 0 0 30px rgba(71, 100, 255, 0.4);
             --highlight-color: #ff6b9d;
             --warning-color: #ffa726;
+            --success-color: #4caf50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .section {
+            position: relative;
+            padding: 4rem 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 242, 254, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(71, 100, 255, 0.1) 0%, transparent 50%),
+                var(--bg-gradient);
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, transparent 0%, rgba(0, 242, 254, 0.03) 50%, transparent 100%),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0, 242, 254, 0.03) 2px,
+                    rgba(0, 242, 254, 0.03) 4px
+                );
+            pointer-events: none;
+            animation: scanning 8s linear infinite;
+        }
+
+        @keyframes scanning {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color), var(--highlight-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: var(--neon-glow);
+            line-height: 1.2;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+            border-radius: 2px;
+            box-shadow: var(--neon-glow);
+        }
+
+        .job-intro {
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: 
+                linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(71, 100, 255, 0.1)),
+                rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-intro::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            opacity: 0.5;
+        }
+
+        .job-intro h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px rgba(0, 242, 254, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+
+        .job-intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 0.5rem;
+        }
+
+        .job-intro .highlight {
+            color: var(--highlight-color);
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
+        }
+
+        .job-section {
+            margin: 2rem 0;
+            padding: 2.5rem;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(26, 26, 46, 0.6)),
+                rgba(22, 33, 62, 0.3);
+            border-radius: 20px;
+            border: 1px solid rgba(71, 100, 255, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 242, 254, 0.1), transparent);
+            animation: spin 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .job-section:hover::before {
+            opacity: 1;
+        }
+
+        .job-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(71, 100, 255, 0.3);
+            border-color: var(--secondary-color);
+        }
+
+        .job-section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .job-section-title .emoji {
+            font-size: 1.6rem;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
+        }
+
+        .job-section ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .job-section li {
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 2rem;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+
+        .job-section li::before {
+            content: '▶';
+            color: var(--secondary-color);
+            font-size: 1rem;
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .benefits-section {
+            margin: 2rem 0;
+            padding: 3rem;
+            background: 
+                linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(0, 242, 254, 0.1)),
+                rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            border: 2px solid var(--highlight-color);
+            box-shadow: 
+                0 0 40px rgba(255, 107, 157, 0.3),
+                inset 0 0 30px rgba(255, 107, 157, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(255, 107, 157, 0.1) 0%, transparent 70%);
+            animation: pulse 5s ease-in-out infinite;
+        }
+
+        .benefits-section .job-section-title {
+            color: var(--highlight-color);
+            text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
+        }
+
+        .contact-section {
+            margin: 3rem 0;
+            padding: 3rem;
+            background: 
+                linear-gradient(135deg, rgba(71, 100, 255, 0.15), rgba(0, 242, 254, 0.1)),
+                rgba(0, 0, 0, 0.3);
+            border-radius: 25px;
+            border: 2px solid var(--accent-color);
+            box-shadow: 
+                0 0 40px rgba(71, 100, 255, 0.3),
+                inset 0 0 30px rgba(71, 100, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .contact-section .job-section-title {
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(71, 100, 255, 0.5);
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info .email {
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 242, 254, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            display: inline-block;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info .email:hover {
+            background: rgba(0, 242, 254, 0.2);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .location-info {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .location-info .highlight {
+            color: var(--warning-color);
+            font-weight: 600;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 2s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 3s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .job-intro,
+            .job-section,
+            .benefits-section,
+            .contact-section {
+                padding: 1.5rem;
+            }
+
+            .job-section-title {
+                font-size: 1.2rem;
+            }
+
+            .job-section li {
+                font-size: 1rem;
+            }
+        }
+        /* 7.2 */
+        :root {
+            --primary-color: #0066ff;
+            --secondary-color: #00f2fe;
+            --accent-color: #4764ff;
+            --text-light: #e0e6ff;
+            --bg-dark: #0a0a0f;
+            --bg-gradient: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+            --neon-glow: 0 0 20px rgba(0, 242, 254, 0.3);
+            --border-glow: 0 0 30px rgba(71, 100, 255, 0.4);
+            --highlight-color: #ff6b9d;
+            --warning-color: #ffa726;
         }
 
         * {
@@ -2958,6 +3368,84 @@
     </section>
 
  <!-- Contact section -->
+<section class="section">
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="container">
+        <h2 class="section-title">🚀 SingularityX 招聘：首席技术官 / 技术合伙人</h2>
+        
+        <div class="job-intro">
+            <h3>技术领袖，共创未来</h3>
+            <p>我们正在寻找一位具备<span class="highlight">战略视野与顶尖技术能力</span>的技术领袖，</p>
+            <p>作为CTO / 技术合伙人加入团队，共同打造下一代自进化智能系统。</p>
+        </div>
+
+        <div class="job-section">
+            <div class="job-section-title">
+                <span class="emoji">🔍</span>岗位职责
+            </div>
+            <ul>
+                <li>主导核心技术架构设计与算法研发</li>
+                <li>推动强化学习（RL）+ 自我博弈（Self-play）系统的建模与部署</li>
+                <li>构建并调度异构计算系统（GPU/模型/策略引擎）</li>
+                <li>设计分布式系统架构，支撑大规模AI运行</li>
+                <li>参与组织文化构建，推动"演化型组织"成长机制</li>
+            </ul>
+        </div>
+
+        <div class="job-section">
+            <div class="job-section-title">
+                <span class="emoji">🧪</span>任职要求
+            </div>
+            <ul>
+                <li>计算机、数学、人工智能等相关领域博士学历（PhD）</li>
+                <li>精通Python/C++，有大型AI系统工程落地经验</li>
+                <li>在强化学习、多智能体系统、博弈系统建模等方面有深入实践</li>
+                <li>能主导分布式系统架构设计与部署</li>
+                <li>具备产品思维，理解"智能体行为 + 策略生命周期"闭环</li>
+                <li>对组织演化、机制设计有独到见解者优先</li>
+            </ul>
+        </div>
+
+        <div class="benefits-section">
+            <div class="job-section-title">
+                <span class="emoji">💼</span>我们提供
+            </div>
+            <ul>
+                <li>高度自由的技术决策权</li>
+                <li>初创阶段核心成员的高价值股权激励</li>
+                <li>与全球顶级AI人才共创未来的机会</li>
+                <li>灵活的工作模式与全球化协作平台</li>
+            </ul>
+        </div>
+
+        <div class="contact-section">
+            <div class="job-section-title">
+                <span class="emoji">📧</span>投递方式
+            </div>
+            <div class="contact-info">
+                <p>请发送简历至：</p>
+                <a href="mailto:hanxiaoxuan@wereem.com?subject=CTO申请+姓名" class="email">hanxiaoxuan@wereem.com</a>
+                <p>邮件标题注明：<strong>【CTO申请】+姓名</strong></p>
+                
+                <div class="location-info">
+                    <p><strong>工作地点：</strong></p>
+                    <p><span class="highlight">青岛/杭州/远程可选</span> 或位于 <span class="highlight">新加坡、硅谷、北京</span> 等地</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <!-- 修改后的联系我们部分（移除二维码） -->
