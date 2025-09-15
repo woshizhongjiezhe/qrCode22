@@ -1,30 +1,34 @@
 /* === 核心变量定义 === */
 :root {
-    /* 主色调 - 蓝黑科技风 */
-    --primary-blue: #00f3ff;
-    --electric-blue: #0080ff;
-    --deep-blue: #003366;
-    --cyber-blue: #00d4ff;
-    --neon-blue: #00ffff;
+    /* XEO主色调 - 紫色系 */
+    --primary-purple: #50348f;
+    --light-purple: #7c3aed;
+    --deep-purple: #3c1d5c;
+    --accent-purple: #8b5cf6;
     
-    /* 黑色系 */
-    --void-black: #000000;
-    --dark-black: #0a0a0f;
-    --deep-black: #111118;
-    --surface-black: #1a1a24;
+    /* 中性色 */
+    --background-light: #f3f4f6;
+    --background-dark: #1a1a2e;
+    --surface-dark: #16213e;
+    --void-black: #0f0f23;
+    
+    /* 文字颜色 */
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
     
     /* 荧光效果 */
-    --glow-primary: 0 0 20px var(--primary-blue);
-    --glow-secondary: 0 0 30px var(--electric-blue);
-    --glow-strong: 0 0 40px var(--neon-blue);
+    --glow-primary: 0 0 20px var(--primary-purple);
+    --glow-secondary: 0 0 30px var(--light-purple);
+    --glow-strong: 0 0 40px var(--accent-purple);
     
     /* 渐变 */
-    --gradient-blue: linear-gradient(135deg, var(--cyber-blue) 0%, var(--electric-blue) 50%, var(--deep-blue) 100%);
-    --gradient-glow: linear-gradient(135deg, var(--neon-blue) 0%, var(--primary-blue) 100%);
+    --gradient-purple: linear-gradient(135deg, var(--primary-purple) 0%, var(--light-purple) 50%, var(--accent-purple) 100%);
+    --gradient-glow: linear-gradient(135deg, var(--accent-purple) 0%, var(--primary-purple) 100%);
     
     /* 透明度 */
-    --glass-bg: rgba(0, 243, 255, 0.05);
-    --glass-border: rgba(0, 243, 255, 0.2);
+    --glass-bg: rgba(80, 52, 143, 0.1);
+    --glass-border: rgba(80, 52, 143, 0.3);
 }
 
 /* === 基础重置和设置 === */
@@ -41,7 +45,7 @@ html {
 body {
     font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--void-black);
-    color: var(--primary-blue);
+    color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -167,7 +171,7 @@ body {
 
 /* 加载文字效果 */
 .loading-text {
-    color: var(--primary-blue);
+    color: var(--primary-purple);
 }
 
 .glitch-text {
@@ -176,7 +180,7 @@ body {
     font-weight: 900;
     letter-spacing: 2px;
     position: relative;
-    text-shadow: var(--glow-primary);
+    color: var(--primary-purple);
     animation: glitch 2s infinite;
 }
 
@@ -231,7 +235,7 @@ body {
     font-family: "Consolas", "Monaco", "Microsoft YaHei", "微软雅黑", monospace;
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-purple);
 }
 
 /* === 粒子系统 === */
@@ -249,9 +253,9 @@ body {
     position: absolute;
     width: 2px;
     height: 2px;
-    background: var(--primary-blue);
+    background: var(--primary-purple);
     border-radius: 50%;
-    box-shadow: 0 0 6px var(--primary-blue);
+    box-shadow: 0 0 6px var(--primary-purple);
     animation: float 6s infinite ease-in-out;
 }
 
@@ -286,8 +290,7 @@ body {
     font-family: "SimHei", "黑体", "Microsoft YaHei", "微软雅黑", 'Orbitron', monospace;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-blue);
-    text-shadow: var(--glow-primary);
+    color: var(--primary-purple);
     letter-spacing: 1px;
 }
 
@@ -298,7 +301,7 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    border: 2px solid var(--primary-blue);
+    border: 2px solid var(--primary-purple);
     border-radius: 4px;
     opacity: 0;
     animation: logoPulse 3s ease-in-out infinite;
@@ -311,7 +314,7 @@ body {
 
 .nav-link {
     position: relative;
-    color: var(--primary-blue);
+    color: var(--text-secondary);
     text-decoration: none;
     padding: 0.8rem 1.5rem;
     font-weight: 500;
@@ -342,15 +345,14 @@ body {
 }
 
 .nav-link:hover {
-    color: white;
-    text-shadow: var(--glow-primary);
+    color: var(--primary-purple);
     transform: translateY(-2px);
 }
 
 .cyber-btn {
-    background: linear-gradient(45deg, var(--deep-black), var(--surface-black));
+    background: linear-gradient(45deg, var(--surface-dark), var(--background-dark));
     border: 2px solid var(--glass-border);
-    color: var(--primary-blue);
+    color: var(--primary-purple);
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", 'Orbitron', monospace;
@@ -362,7 +364,7 @@ body {
 }
 
 .cyber-btn:hover {
-    border-color: var(--primary-blue);
+    border-color: var(--primary-purple);
     box-shadow: var(--glow-primary);
     transform: translateY(-2px);
 }
@@ -373,7 +375,7 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+    background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
     opacity: 0.3;
     transition: left 0.6s ease;
 }
@@ -436,7 +438,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: var(--glow-strong);
     position: relative;
     letter-spacing: 2px;
 }
@@ -458,18 +459,14 @@ body {
 }
 
 .neon-text {
-    text-shadow: 
-        0 0 10px var(--primary-blue),
-        0 0 20px var(--primary-blue),
-        0 0 30px var(--primary-blue);
-    animation: neonFlicker 4s ease-in-out infinite;
+    color: var(--light-purple);
 }
 
 .hero-description {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 3rem;
-    color: rgba(0, 243, 255, 0.8);
+    color: var(--text-secondary);
     max-width: 600px;
     font-weight: 400;
 }
@@ -495,15 +492,15 @@ body {
 }
 
 .action-btn.primary {
-    background: var(--gradient-blue);
+    background: var(--gradient-purple);
     color: white;
     box-shadow: var(--glow-secondary);
 }
 
 .action-btn.secondary {
     background: transparent;
-    color: var(--primary-blue);
-    border: 2px solid var(--primary-blue);
+    color: var(--primary-purple);
+    border: 2px solid var(--primary-purple);
 }
 
 .btn-text {
@@ -587,6 +584,7 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     letter-spacing: 2px;
+    color: var(--primary-purple);
 }
 
 .title-line {
@@ -867,30 +865,95 @@ body {
     font-weight: 600;
     color: var(--primary-blue);
     margin-bottom: 2rem;
-    text-shadow: var(--glow-primary);
 }
 
-.benefits-grid {
+.benefits-comprehensive-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
-.benefit-item {
+/* Ensure benefits grid maintains 2 columns on larger mobile screens */
+@media (min-width: 481px) and (max-width: 768px) {
+    .benefits-comprehensive-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-comprehensive-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+.benefit-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(15px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+.benefit-card:hover::before {
+    left: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-blue);
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);
+}
+
+.benefit-icon-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.benefit-icon-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, var(--primary-blue), var(--electric-blue));
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    color: rgba(0, 243, 255, 0.8);
-    font-weight: 500;
+    font-size: 1.5rem;
+    box-shadow: var(--glow-primary);
 }
 
-.benefit-icon {
-    width: 12px;
-    height: 12px;
-    background: var(--primary-blue);
-    border-radius: 50%;
-    box-shadow: var(--glow-primary);
+.benefit-card-title {
+    font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 0;
+}
+
+.benefit-card-content {
+    color: rgba(0, 243, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
 }
 
 /* === 联系板块 === */
@@ -998,7 +1061,6 @@ body {
     font-weight: 700;
     color: var(--primary-blue);
     margin-bottom: 0.5rem;
-    text-shadow: var(--glow-primary);
 }
 
 .footer-subtitle {
@@ -1093,20 +1155,6 @@ body {
     }
 }
 
-@keyframes neonFlicker {
-    0%, 100% { 
-        text-shadow: 
-            0 0 10px var(--primary-blue),
-            0 0 20px var(--primary-blue),
-            0 0 30px var(--primary-blue);
-    }
-    50% { 
-        text-shadow: 
-            0 0 5px var(--primary-blue),
-            0 0 10px var(--primary-blue),
-            0 0 15px var(--primary-blue);
-    }
-}
 
 @keyframes slideInLeft {
     0% {
@@ -1240,6 +1288,36 @@ body {
         line-height: 1.6;
     }
     
+    /* Benefits section mobile optimizations */
+    .benefits-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .benefit-card {
+        padding: 1.5rem;
+    }
+    
+    .benefit-card-title {
+        font-size: 1rem;
+    }
+    
+    .benefit-card-content {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .benefit-icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .benefit-icon-header {
+        gap: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
     .matrix-bg {
         display: none;
     }
@@ -1287,7 +1365,39 @@ body {
     }
     
     .benefits-section {
-        padding: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    .benefits-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .benefit-card {
+        padding: 1rem;
+    }
+    
+    .benefit-card-title {
+        font-size: 0.9rem;
+    }
+    
+    .benefit-card-content {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .benefit-icon-circle {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .benefit-icon-header {
+        gap: 0.6rem;
+        margin-bottom: 0.6rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     
     .benefits-grid {
