@@ -162,6 +162,12 @@ function initLoadingSequence() {
 
 // === 主要动画启动 ===
 function startMainAnimations() {
+    // 显示主内容
+    const mainContent = document.getElementById('mainContent');
+    if (mainContent) {
+        mainContent.classList.remove('hidden');
+    }
+    
     // 启动标题粒子效果
     animateTitleParticles();
     
