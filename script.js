@@ -502,30 +502,25 @@ function initLanguageSystem() {
         // 更新故障文字效果
         const glitchElements = document.querySelectorAll('.glitch-text');
         glitchElements.forEach(element => {
-            const textAttr = currentLang === 'zh' ? 'data-text-zh' : 'data-text-en';
-            const text = element.getAttribute(textAttr);
-            if (text) {
-                element.setAttribute('data-text', text);
+            const content = currentLang === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
+            if (content) {
+                // 更新主文字内容
+                element.textContent = content;
                 
-                // 重新设置伪元素内容
-                const beforeContent = currentLang === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
-                if (beforeContent) {
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        .glitch-text::before,
-                        .glitch-text::after {
-                            content: "${beforeContent}";
-                        }
-                    `;
-                    document.head.appendChild(style);
-                    
-                    // 清理旧样式
-                    setTimeout(() => {
-                        if (style.parentNode) {
-                            style.parentNode.removeChild(style);
-                        }
-                    }, 100);
+                // 创建或更新伪元素样式
+                let glitchStyle = document.getElementById('glitch-dynamic-style');
+                if (!glitchStyle) {
+                    glitchStyle = document.createElement('style');
+                    glitchStyle.id = 'glitch-dynamic-style';
+                    document.head.appendChild(glitchStyle);
                 }
+                
+                glitchStyle.textContent = `
+                    .glitch-text::before,
+                    .glitch-text::after {
+                        content: "${content}";
+                    }
+                `;
             }
         });
         
