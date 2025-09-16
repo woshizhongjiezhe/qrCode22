@@ -1,16 +1,26 @@
 /* === 核心变量定义 === */
 :root {
-    /* XEO主色调 - 紫色系 */
-    --primary-purple: #50348f;
-    --light-purple: #7c3aed;
-    --deep-purple: #3c1d5c;
-    --accent-purple: #8b5cf6;
+    /* 科技感深色主题 */
+    --cyber-black: #0a0a0f;
+    --deep-black: #0f0f1a;
+    --dark-blue: #1a1a2e;
+    --cyber-blue: #00f5ff;
+    --electric-blue: #0066ff;
+    --neon-blue: #00ccff;
+    --primary-blue: #0099ff;
+    
+    /* 紫色系 */
+    --primary-purple: #6366f1;
+    --light-purple: #8b5cf6;
+    --deep-purple: #4f46e5;
+    --accent-purple: #a855f7;
     
     /* 中性色 */
     --background-light: #f3f4f6;
     --background-dark: #1a1a2e;
     --surface-dark: #16213e;
-    --void-black: #0f0f23;
+    --surface-black: #1a1a2e;
+    --void-black: #0a0a0f;
     
     /* 文字颜色 */
     --text-primary: #ffffff;
@@ -18,17 +28,29 @@
     --text-muted: rgba(255, 255, 255, 0.6);
     
     /* 荧光效果 */
-    --glow-primary: 0 0 20px var(--primary-purple);
-    --glow-secondary: 0 0 30px var(--light-purple);
-    --glow-strong: 0 0 40px var(--accent-purple);
+    --glow-primary: 0 0 20px var(--cyber-blue);
+    --glow-secondary: 0 0 30px var(--electric-blue);
+    --glow-strong: 0 0 40px var(--neon-blue);
     
     /* 渐变 */
+    --gradient-cyber: linear-gradient(135deg, var(--cyber-blue) 0%, var(--electric-blue) 50%, var(--primary-blue) 100%);
     --gradient-purple: linear-gradient(135deg, var(--primary-purple) 0%, var(--light-purple) 50%, var(--accent-purple) 100%);
-    --gradient-glow: linear-gradient(135deg, var(--accent-purple) 0%, var(--primary-purple) 100%);
+    --gradient-glow: linear-gradient(135deg, var(--cyber-blue) 0%, var(--electric-blue) 100%);
     
     /* 透明度 */
-    --glass-bg: rgba(80, 52, 143, 0.1);
-    --glass-border: rgba(80, 52, 143, 0.3);
+    --glass-bg: rgba(0, 245, 255, 0.05);
+    --glass-border: rgba(0, 245, 255, 0.2);
+}
+
+/* === 主内容容器控制 === */
+.main-content {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.main-content.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* === 基础重置和设置 === */
@@ -43,11 +65,12 @@ html {
 }
 
 body {
-    font-family: "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--void-black);
+    font-family: 'Orbitron', "JetBrains Mono", "Fira Code", "Consolas", "Microsoft YaHei", "微软雅黑", "SimHei", "黑体", monospace, sans-serif;
+    background: radial-gradient(circle at center, var(--cyber-black) 0%, var(--deep-black) 50%, var(--void-black) 100%);
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
+    position: relative;
 }
 
 /* === Matrix雨背景效果 === */
@@ -90,7 +113,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, var(--deep-black) 0%, var(--dark-black) 50%, var(--void-black) 100%);
+    background: radial-gradient(circle at center, var(--deep-black) 0%, var(--cyber-black) 50%, var(--void-black) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,11 +141,11 @@ body {
 
 .hologram-ring {
     position: absolute;
-    border: 2px solid var(--primary-blue);
+    border: 2px solid var(--cyber-blue);
     border-radius: 50%;
     box-shadow: 
-        inset 0 0 20px var(--primary-blue),
-        0 0 20px var(--primary-blue);
+        inset 0 0 20px var(--cyber-blue),
+        0 0 20px var(--cyber-blue);
 }
 
 .ring-1 {
@@ -130,6 +153,7 @@ body {
     height: 100%;
     animation: rotate 4s linear infinite;
     border-style: dashed;
+    border-color: var(--cyber-blue);
 }
 
 .ring-2 {
@@ -163,7 +187,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--primary-blue);
+    background: var(--cyber-blue);
     border-radius: 50%;
     box-shadow: var(--glow-strong);
     animation: pulse 2s ease-in-out infinite;
@@ -171,16 +195,17 @@ body {
 
 /* 加载文字效果 */
 .loading-text {
-    color: var(--primary-purple);
+    color: var(--cyber-blue);
 }
 
 .glitch-text {
-    font-family: "SimHei", "黑体", "Microsoft YaHei", "微软雅黑", 'Orbitron', monospace;
+    font-family: 'Orbitron', "JetBrains Mono", "Microsoft YaHei", "微软雅黑", monospace;
     font-size: 3rem;
     font-weight: 900;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     position: relative;
-    color: var(--primary-purple);
+    color: var(--cyber-blue);
+    text-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
     animation: glitch 2s infinite;
 }
 
@@ -430,16 +455,14 @@ body {
 }
 
 .title-main {
-    font-family: "SimHei", "黑体", "Microsoft YaHei", "微软雅黑", 'Orbitron', monospace;
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-family: 'Orbitron', "SimHei", "黑体", "Microsoft YaHei", "微软雅黑", monospace;
+    font-size: clamp(4rem, 10vw, 8rem);
     font-weight: 900;
     line-height: 1.1;
-    background: var(--gradient-glow);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--cyber-blue);
     position: relative;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
 }
 
 .title-particles {
@@ -956,6 +979,154 @@ body {
     margin: 0;
 }
 
+/* === SVG图标样式 === */
+.benefit-icon-circle svg {
+    width: 24px;
+    height: 24px;
+    color: var(--cyber-blue);
+    filter: drop-shadow(0 0 8px var(--cyber-blue));
+}
+
+/* === 业务生态版块 === */
+.business-overview {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.business-main-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 3rem;
+    backdrop-filter: blur(15px);
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+.business-main-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+.business-main-card:hover::before {
+    left: 100%;
+}
+
+.business-main-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--cyber-blue);
+    box-shadow: var(--glow-secondary);
+}
+
+.business-main-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1.5rem;
+}
+
+.business-main-card .card-title {
+    font-family: 'Orbitron', "Microsoft YaHei", "微软雅黑", monospace;
+    font-size: 1.8rem;
+    color: var(--cyber-blue);
+    font-weight: 700;
+    margin: 0;
+}
+
+.business-main-card .card-text {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.business-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(15px);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.business-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+.business-card:hover::before {
+    left: 100%;
+}
+
+.business-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--cyber-blue);
+    box-shadow: var(--glow-secondary);
+}
+
+.business-card .card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.business-card .card-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.business-card .card-icon svg {
+    width: 30px;
+    height: 30px;
+    color: var(--cyber-blue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 8px var(--cyber-blue));
+}
+
+.business-card .card-title {
+    font-family: 'Orbitron', "Microsoft YaHei", "微软雅黑", monospace;
+    font-size: 1.4rem;
+    color: var(--cyber-blue);
+    font-weight: 600;
+    margin: 0;
+}
+
+.business-card .card-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
 /* === 联系板块 === */
 .contact-section {
     padding: 6rem 0;
@@ -1403,5 +1574,35 @@ body {
     .benefits-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+    
+    /* 业务生态响应式 */
+    .business-main-card {
+        padding: 2rem;
+    }
+    
+    .business-main-card .card-title {
+        font-size: 1.5rem;
+    }
+    
+    .business-main-card .card-text {
+        font-size: 1rem;
+    }
+    
+    .business-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .business-card {
+        padding: 2rem;
+    }
+    
+    .business-card .card-title {
+        font-size: 1.2rem;
+    }
+    
+    .business-card .card-text {
+        font-size: 0.9rem;
     }
 }
