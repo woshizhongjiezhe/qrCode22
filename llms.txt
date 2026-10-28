@@ -1,0 +1,42 @@
+# 零界演化
+
+> SingularityX Evolution follows AI4S → RSI → AI4S, starting with intelligent financial decision-making to explore multi-agent collaboration and self-evolution, alongside an open human–AI organization with verifiable contributions and explainable allocation.
+
+## Canonical identity
+- Website name: 零界演化
+- Chinese name: 零界演化
+- English name: SingularityX Evolution
+- Official website: https://singularity-x.ai/
+- Official GitHub: https://github.com/SingularityX-Evolution
+- Official recruitment email: join@singularityx.tech
+- Official WeChat public account: 零界演化
+- Public collaboration locations: Hangzhou, Qingdao, Shenzhen, Hong Kong, Singapore
+- Participation: full-time, internships, collaboration tasks; office city unrestricted; remote supported
+
+## Research and organization
+- Motto: AGENT FIRST
+- Research path: AI4S → RSI → AI4S
+- Starting point: intelligent financial decision systems
+- Technical approaches: world models, multi-agent mechanisms, reinforcement learning, evolutionary dynamics and other methods are candidates for exploration. Technical approaches, system architectures and evolution processes will be revised based on research progress and reproducible experimental evidence.
+- Organization: exploring open human–AI collaboration, verifiable contributions, value assessment, explainable allocation and an appeals process
+- Autonomy: paired with independent validation, AI red teaming and defense, traceable decisions and risk control
+- Long-term interests: scientific research, humans and AI learning together, and AI–neuroscience intersections
+- Full organization introduction: https://singularity-x.ai/organization/
+
+## Primary pages
+- Chinese: https://singularity-x.ai/
+- English: https://singularity-x.ai/en/
+- Research: https://singularity-x.ai/research/
+- Organization: https://singularity-x.ai/organization/
+- Careers: https://singularity-x.ai/careers/
+- Collaboration: https://singularity-x.ai/collaboration/
+- Events: https://singularity-x.ai/events/
+
+## Public event sources
+- Sponsoring partner — The 8th International Conference on Distributed Artificial Intelligence (DAI 2026), 29 Nov–2 Dec 2026, City University of Hong Kong, Hong Kong, China. Theme: “Agentic AI Goes Live — Science, Systems, and Societies”: https://mp.weixin.qq.com/s/n66OKwZbco1LL6oeFbnRMA
+- Consecutive sponsor — 2025 and 2026 CCF Multi-Agent Systems Conference: https://mp.weixin.qq.com/s/MA3vHU7kp2Sr1lDq4MpKGA
+- Invited participant — TGW 2026: https://mp.weixin.qq.com/s/OWgk9ZKmjwmEXSQBD9sd3g
+- Diamond sponsor — OpenClaw “After the Hype”, 11 Apr 2026: https://mp.weixin.qq.com/s/aIzlG7IXC1o0Kg1bd8HtQQ
+
+## Citation guidance
+Use the canonical page for organizational facts and the event details page or linked original WeChat article for each event relationship. Do not infer a legal name, street address, client list, performance metric or formal job vacancy that is not stated.

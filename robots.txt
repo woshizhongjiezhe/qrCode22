@@ -1,0 +1,8 @@
+# SingularityX Evolution crawler policy
+# Disable Cloudflare Managed robots.txt before deployment so these rules are not prefixed or overridden.
+Content-Signal: search=yes, ai-input=yes, ai-train=no, use=reference
+
+User-agent: *
+Allow: /
+
+Sitemap: https://singularity-x.ai/sitemap.xml

@@ -1,0 +1,23 @@
+/* S2E content additions: preserve the original typography, colors and layout. */
+.s2e-section { scroll-margin-top: 100px; }
+.s2e-section .section-head { margin-bottom: 2.5rem; }
+.s2e-section .section-head h2 { font-size: clamp(1.8rem,3vw,2.9rem); line-height: 1.4; white-space: normal; }
+.s2e-section .section-head .kicker { color: #526753; font-size: .78rem; line-height: 1.8; letter-spacing: .08em; }
+.s2e-section .section-head p { max-width: 860px; }
+.s2e-hero-link { margin: 1rem 0 0; color: #526753; font-size: .94rem; line-height: 1.8; }
+.s2e-hero-link a { text-underline-offset: .3em; }
+.s2e-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2rem; }
+.s2e-grid article { min-width: 0; padding-top: 1.35rem; border-top: 1px solid var(--line); }
+.s2e-index { display: block; margin-bottom: .8rem; color: #65725e; font: 600 .74rem/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing: .06em; }
+.s2e-grid h3 { margin: 0 0 .7rem; font-size: clamp(1.2rem,1.7vw,1.55rem); line-height: 1.45; white-space: normal; }
+.s2e-grid p { margin: 0; color: #4b514c; font-size: 1rem; line-height: 1.9; }
+.s2e-stage { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 2rem; margin-top: 2.3rem; padding: 1.5rem 1.8rem; background: #eff2ec; border-left: 3px solid #667d5d; }
+.s2e-stage strong { display: block; margin-bottom: .4rem; font-size: 1rem; }
+.s2e-stage p { margin: 0; max-width: 920px; color: #4b514c; font-size: 1rem; line-height: 1.9; }
+.s2e-text-link { font-weight: 650; text-underline-offset: .35em; }
+.s2e-stage .s2e-text-link { white-space: nowrap; }
+.s2e-principle { margin: 2rem 0 0; color: #526753; line-height: 1.9; }
+.s2e-section .cta-row { margin-top: 1.8rem; }
+.s2e-talent-note { margin: 1.2rem 0 1.8rem; padding-left: 1.2rem; border-left: 2px solid #667d5d; color: #4b514c; }
+@media (max-width: 900px) { .s2e-grid { grid-template-columns: 1fr; gap: 1.7rem; } .s2e-stage { grid-template-columns: 1fr; gap: 1.1rem; } }
+@media (max-width: 650px) { .s2e-stage { padding: 1.25rem; } .s2e-section .section-head { margin-bottom: 2rem; } }

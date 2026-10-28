@@ -1,0 +1,44 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+
+/assets/site.8c6948ea.css
+  Cache-Control: public, max-age=31536000, immutable
+/assets/site.7a19c2.js
+  Cache-Control: public, max-age=31536000, immutable
+/assets/singularityx-mark.8f31a2.webp
+  Cache-Control: public, max-age=31536000, immutable
+/assets/singularityx-lockup.17c4b8.webp
+  Cache-Control: public, max-age=31536000, immutable
+/assets/social-preview.9b73e1.png
+  Cache-Control: public, max-age=31536000, immutable
+/assets/favicon*
+  Cache-Control: public, max-age=86400
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+/site.webmanifest
+  Content-Type: application/manifest+json; charset=utf-8
+
+/assets/agent-first.5f47a7eb.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/introduction.505139d5.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/home-layout.2b1a194d.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/collaboration-layout.e6c5b4a4.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/events-layout.676a8fde.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/s2e-module.2feca8f8.css
+  Cache-Control: public, max-age=31536000, immutable

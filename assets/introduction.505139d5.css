@@ -1,0 +1,41 @@
+/* Organization introduction and Agent First identity. */
+.home-page.evo-home .site-header{display:block}
+.evo-home .home-hero{min-height:auto;padding:clamp(2rem,5vw,4.5rem) 1.5rem clamp(3rem,6vw,5rem)}
+.evo-home .home-hero__lockup{width:clamp(170px,20vw,285px)}
+.evo-home .home-hero__title{font-family:inherit;font-size:clamp(2.75rem,4.8vw,4.5rem);letter-spacing:.06em;margin:1.15rem 0 .9rem;line-height:1.25}
+.evo-home .evo-agent-first{font:700 .78rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.22em;color:#526753;margin:0 0 1.15rem}
+.evo-tagline{font-weight:680;font-size:clamp(1.25rem,2.15vw,1.95rem);line-height:1.65;letter-spacing:-.015em;text-wrap:balance;margin:0 0 1.4rem}
+.evo-home .home-hero__intro{max-width:900px;font-size:clamp(1rem,1.3vw,1.17rem);line-height:1.9;letter-spacing:0}
+.evo-home .home-hero .cta-row{justify-content:center;margin-top:1.9rem}
+.evo-home .hero{min-height:auto;padding:clamp(3.5rem,6vw,6rem) 0}
+.evo-home .hero h1{font-size:clamp(2.75rem,5.3vw,5rem);white-space:normal;letter-spacing:.04em;line-height:1.2}
+.evo-home .hero .evo-tagline{max-width:760px}
+.evo-overview .section-head{margin-bottom:2.8rem}
+.evo-overview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}
+.evo-overview-grid article{padding-top:1.4rem;border-top:1px solid var(--line);min-width:0}
+.evo-overview-grid h3{font-size:clamp(1.2rem,1.7vw,1.6rem);line-height:1.45;letter-spacing:-.015em;margin:0 0 .9rem;white-space:normal}
+.evo-overview-grid p,.evo-long-term p{color:#4b514c;font-size:1.02rem;line-height:1.9;margin:0}
+.evo-long-term{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2.5rem;align-items:center;margin-top:2.7rem;padding-top:1.8rem;border-top:1px solid var(--line)}
+.evo-text-link{font-weight:650;text-underline-offset:.4em;white-space:nowrap}
+.evo-capabilities{background:#eff2ec}
+.evo-capabilities h2{font-size:clamp(1.75rem,3.2vw,2.7rem);line-height:1.4;white-space:normal;max-width:1000px;margin-bottom:2.2rem}
+.evo-capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2.5rem}
+.evo-capability{padding-top:1.3rem;border-top:1px solid #c6d0c2;min-width:0}
+.evo-capability>span{font:600 .8rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#65725e}
+.evo-capability h3{font-size:1.5rem;line-height:1.4;white-space:normal;margin:1rem 0 .65rem}
+.evo-capability p{color:#4b514c;font-size:1.03rem;line-height:1.85;margin:0}
+.evo-organization-hero{padding:clamp(3rem,5vw,5rem) 0 3rem}
+.evo-organization-hero h1.evo-tagline{font-size:clamp(1.25rem,2.15vw,1.95rem);margin:0 0 1.4rem;line-height:1.65;letter-spacing:-.015em;white-space:normal}
+.evo-organization-hero .evo-tagline{max-width:980px}
+.evo-organization-hero .hero-lede{max-width:940px;line-height:1.9}
+.evo-story{padding-top:1rem;padding-bottom:clamp(3rem,6vw,5rem)}
+.evo-story-section{display:grid;grid-template-columns:minmax(140px,.35fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);padding:clamp(2.5rem,4.5vw,4rem) 0;border-bottom:1px solid var(--line)}
+.evo-story-label{font-size:.93rem;line-height:1.7;color:#65725e;font-weight:650;padding-top:.25rem}
+.evo-story-section h2{font-size:clamp(1.55rem,2.5vw,2.25rem);line-height:1.45;letter-spacing:-.015em;white-space:normal;margin-bottom:1.1rem}
+.evo-story-section p{font-size:clamp(1.04rem,1.3vw,1.15rem);line-height:2;color:#3f4641;max-width:930px;margin:0;text-wrap:pretty}
+.evo-closing{margin:clamp(2rem,4vw,4rem) 0 0;padding:clamp(1.4rem,3vw,2.5rem);background:#eff2ec;border-left:3px solid #667d5d}
+.evo-closing p{max-width:1040px;margin:0;font-size:clamp(1.12rem,1.7vw,1.5rem);line-height:1.95;font-weight:550}
+@media(max-width:900px){.evo-overview-grid,.evo-capability-grid{gap:1.5rem}.evo-long-term{grid-template-columns:1fr;gap:1.2rem}.evo-story-section{grid-template-columns:150px minmax(0,1fr);gap:2rem}}
+@media(max-width:650px){.evo-home .home-hero{padding:2rem 1.1rem 3rem}.evo-home .home-hero__lockup{width:170px}.evo-home .home-hero__title{font-size:2.7rem}.evo-overview-grid,.evo-capability-grid,.evo-story-section{grid-template-columns:1fr;gap:1.25rem}.evo-overview-grid,.evo-capability-grid{gap:1.8rem}.evo-story-section{padding:2.2rem 0}.evo-story-label{padding:0}.evo-home .hero-grid{gap:2.5rem}.evo-home .hero-mark{max-width:250px;justify-self:center;width:100%}.evo-organization-hero .breadcrumbs{margin-bottom:2rem}.evo-tagline{line-height:1.7}.evo-home .home-hero .cta-row{gap:.65rem}.evo-home .home-hero .button{font-size:.92rem}}
+
+.home-page.evo-home .section-head h2{white-space:normal;line-height:1.4;letter-spacing:-.02em}

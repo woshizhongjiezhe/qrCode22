@@ -1,0 +1,76 @@
+/* Four matching conference cards, with full details available through the card link. */
+html[lang] .event-grid.event-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: auto;
+  align-items: stretch;
+  gap: 1.25rem;
+  scroll-margin-top: 7rem;
+}
+html[lang] .event-grid--four > .event-card {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: clamp(1.2rem, 1.7vw, 1.8rem);
+}
+.event-grid--four .event-date {
+  display: block;
+  margin: 1.55rem 0 .9rem;
+  color: #77777c;
+  font-size: .94rem;
+}
+.page-events .event-grid--four .event-date {
+  color: #5f504b;
+  font-size: .98rem;
+  font-weight: 750;
+}
+.event-grid--four .event-date time {
+  display: inline;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+}
+.event-details {
+  display: none;
+  margin-top: 1.75rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--page-accent);
+  border-radius: var(--radius);
+  background: #fff;
+  scroll-margin-top: 7rem;
+}
+.event-details:target {
+  display: block;
+}
+.event-details h3 {
+  margin: 0 0 1.2rem;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.45;
+}
+.event-details p {
+  color: var(--muted);
+  line-height: 1.85;
+}
+.event-details__close {
+  display: inline-block;
+  margin-top: .75rem;
+  color: var(--page-accent);
+  font-weight: 650;
+}
+@media (max-width: 1000px) {
+  html[lang] .event-grid.event-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 600px) {
+  html[lang] .event-grid.event-grid--four {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html[lang] .event-grid--four > .event-card {
+    padding: 1.5rem;
+  }
+  .event-grid--four .event-date {
+    margin-top: 1.3rem;
+  }
+}

@@ -1,0 +1,11 @@
+/* Give the collaboration copy the available space beside its action. */
+.page-collaboration .af-submit > div {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: none;
+}
+@media (min-width: 1200px) {
+  html[lang="zh-CN"] .page-collaboration .af-submit > div > p:not(.eyebrow) {
+    white-space: nowrap;
+  }
+}
