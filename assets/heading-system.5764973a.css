@@ -1,0 +1,38 @@
+/* Consistent titles and introductions across the website. */
+#main h1.page-title {
+  font-family: inherit;
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -.025em;
+  max-width: 1100px;
+  margin: 0 0 1.4rem;
+  white-space: normal;
+  text-wrap: balance;
+}
+.evo-home #main h2.section-title,
+.page-s2e #main h2.section-title {
+  font-family: inherit;
+  font-size: clamp(1.65rem, 2.6vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+  max-width: none;
+  margin: 0 0 .85rem;
+  white-space: normal;
+}
+.evo-home #main .section-intro {
+  margin: 0;
+  color: #4b514c;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  max-width: 1000px;
+}
+
+.evo-home #main h3.home-item-title {
+  font-family: inherit;
+  font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: normal;
+}

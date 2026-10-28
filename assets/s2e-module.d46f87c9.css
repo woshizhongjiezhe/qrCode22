@@ -1,0 +1,22 @@
+/* One self-contained homepage module. All rules are scoped to S2E. */
+.s2e-module { scroll-margin-top: 100px; }
+.s2e-module .s2e-directions { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.8rem; }
+.s2e-module .s2e-directions article { min-width: 0; padding-top: 1.2rem; border-top: 1px solid #cbd5c7; }
+.s2e-module .s2e-index { color: #65725e; font: 600 .75rem/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; }
+.s2e-module h3 { margin: .55rem 0 .6rem; font-size: clamp(1.15rem,1.6vw,1.4rem); line-height: 1.5; white-space: normal; }
+.s2e-module .s2e-directions p { margin: 0; color: #4b514c; font-size: .98rem; line-height: 1.85; }
+.s2e-module .s2e-stage { margin: 1.8rem 0 0; padding: 1.15rem 1.35rem; border-left: 3px solid #667d5d; background: transparent; }
+.s2e-module .s2e-stage strong { display: block; margin-bottom: .35rem; font-size: .97rem; }
+.s2e-module .s2e-stage p { margin: 0; color: #4b514c; font-size: .98rem; line-height: 1.85; }
+.s2e-module details { margin-top: 1.5rem; border-block: 1px solid #d1d9cd; }
+.s2e-module summary { padding: 1rem 0; cursor: pointer; color: #334a34; font-size: 1rem; font-weight: 650; }
+.s2e-module summary::marker { color: #667d5d; }
+.s2e-module summary:focus-visible { outline: 2px solid #526753; outline-offset: 4px; }
+.s2e-module .s2e-details { padding: 0 0 1.2rem; }
+.s2e-module .s2e-details p { margin: .5rem 0 1rem; color: #4b514c; font-size: .98rem; line-height: 1.9; }
+.s2e-module .s2e-details p:last-child { margin-bottom: 0; }
+.s2e-module .s2e-end { display: flex; gap: 1.5rem; justify-content: space-between; align-items: center; margin-top: 1.6rem; }
+.s2e-module .s2e-end p { margin: 0; color: #3f5540; font-size: 1rem; line-height: 1.85; }
+.s2e-module .s2e-end .button { flex-shrink: 0; font-size: .95rem; }
+@media (max-width: 900px) { .s2e-module .s2e-directions { grid-template-columns: 1fr; gap: 1.3rem; } .s2e-module .s2e-end { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 650px) { .s2e-module .s2e-stage { padding: 1rem; } }

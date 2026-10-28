@@ -32,6 +32,15 @@
 - Collaboration: https://singularity-x.ai/collaboration/
 - Events: https://singularity-x.ai/events/
 
+## S2E collaboration platform
+- Chinese introduction: https://singularity-x.ai/s2e/
+- English introduction: https://singularity-x.ai/en/s2e/
+- S2E (Singularity to Evolution) is a distributed AI collaboration platform in development, presented separately from the company identity.
+- It connects researchers, experts, engineers, agents and computing resources through verifiable research tasks.
+- Long-term questions concern energy and habitats, life and intelligence, and collaboration and civilization.
+- Current stage: a small-sample finance demo to refine task collaboration, outcome validation and contribution records. Other scientific fields are long-term directions.
+- Guided by public-interest research and community collaboration; contribution records, controlled sharing and participation support mechanisms are under exploration.
+
 ## Public event sources
 - Sponsoring partner — The 8th International Conference on Distributed Artificial Intelligence (DAI 2026), 29 Nov–2 Dec 2026, City University of Hong Kong, Hong Kong, China. Theme: “Agentic AI Goes Live — Science, Systems, and Societies”: https://mp.weixin.qq.com/s/n66OKwZbco1LL6oeFbnRMA
 - Consecutive sponsor — 2025 and 2026 CCF Multi-Agent Systems Conference: https://mp.weixin.qq.com/s/MA3vHU7kp2Sr1lDq4MpKGA

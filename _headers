@@ -40,5 +40,11 @@
 /assets/events-layout.676a8fde.css
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/s2e-module.2feca8f8.css
+/assets/s2e-module.d46f87c9.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/s2e-page.ca079bef.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/heading-system.5764973a.css
   Cache-Control: public, max-age=31536000, immutable

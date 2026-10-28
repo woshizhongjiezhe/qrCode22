@@ -1,0 +1,27 @@
+/* S2E introduction page: a single background per section. */
+.page-s2e { --page-accent: #526753; --page-wash: #f3f4f2; }
+.page-s2e .page-hero { background: #fff; padding: clamp(3rem,6vw,6rem) 0; }
+.page-s2e .page-hero::before { content: none; }
+.page-s2e .page-hero h1 { max-width: 1100px; font-size: clamp(2rem,3.6vw,3.6rem); line-height: 1.35; white-space: normal; letter-spacing: -.025em; }
+.page-s2e .hero-lede { max-width: 1050px; font-size: clamp(1.02rem,1.3vw,1.15rem); line-height: 1.95; }
+.page-s2e .s2ep-status { display: inline-flex; align-items: center; gap: .55rem; margin-top: 1.5rem; color: #526753; font-size: .92rem; font-weight: 650; }
+.page-s2e .s2ep-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #667d5d; }
+.page-s2e .s2ep-section { padding: clamp(3.5rem,6vw,6rem) 0; background: #fff; scroll-margin-top: 100px; }
+.page-s2e .s2ep-section--shade { background: #f3f4f2; }
+.page-s2e .section-head { margin-bottom: 2.5rem; }
+.page-s2e .section-head h2 { font-size: clamp(1.75rem,2.7vw,2.65rem); line-height: 1.4; white-space: normal; }
+.page-s2e .section-head p { max-width: 850px; font-size: 1.05rem; line-height: 1.9; }
+.page-s2e .section-head .kicker { font-size: .78rem; letter-spacing: .08em; color: #526753; }
+.page-s2e .s2ep-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2rem; }
+.page-s2e .s2ep-grid article { min-width: 0; border-top: 1px solid #cdd3c9; padding-top: 1.3rem; }
+.page-s2e .s2ep-index { font: 600 .76rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace; color: #65725e; }
+.page-s2e .s2ep-grid h3 { margin: .8rem 0 .65rem; font-size: 1.35rem; line-height: 1.5; white-space: normal; }
+.page-s2e .s2ep-grid p { margin: 0; color: #4b514c; font-size: 1rem; line-height: 1.9; }
+.page-s2e .s2ep-examples { margin-top: 2.6rem; padding-top: 1.5rem; border-top: 1px solid #d6dbd2; }
+.page-s2e .s2ep-examples h3 { font-size: 1.2rem; margin: 0 0 .7rem; }
+.page-s2e .s2ep-examples p { max-width: 1050px; color: #4b514c; margin: 0; font-size: 1rem; line-height: 1.95; }
+.page-s2e .s2ep-principle { margin: 1.8rem 0 0; max-width: 1000px; font-size: 1.1rem; line-height: 1.95; color: #3f5540; }
+.page-s2e .s2ep-join { max-width: 1000px; color: #4b514c; font-size: 1.05rem; line-height: 1.95; }
+.page-s2e .cta-row { flex-wrap: wrap; }
+@media (max-width: 900px) { .page-s2e .s2ep-grid { grid-template-columns: 1fr; gap: 1.8rem; } }
+@media (max-width: 650px) { .page-s2e .breadcrumbs { margin-bottom: 2rem; } .page-s2e .section-head { margin-bottom: 2rem; } }
